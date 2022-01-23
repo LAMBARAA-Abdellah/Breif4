@@ -1,0 +1,231 @@
+
+*{
+margin: 0;
+padding:0;
+}    
+body{
+    font-family: 'Roboto', regular;
+}
+.navbar{
+    width:100vw ;
+    height: 80px;
+    background-color:#38BCFF;
+}
+.logo{
+    width: 76px;
+    height: 76px;
+    margin-left: 10%;
+    margin-top: 2px;
+    float: right;
+   
+}
+nav{
+    display: flex;
+}
+nav h2{
+    margin-top: 24px;
+    margin-left: 15px;
+    font-family: "roboto";
+    font-weight: bold;
+}
+
+.admin{
+    width: 50px;
+    height: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left:63%;
+    
+
+}
+img{
+display:flex;
+justify-content: end;
+}
+
+
+.login{
+    width: 638px;
+    height: 320px;
+    background-color: #38BCFF;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 10px;
+    padding: 10px;
+
+  
+}
+.login div img {
+    width: 100px;
+    height: 100px;
+ text-align: center;
+  
+}
+
+input{
+    width: 398px;
+    background-color: #38BCFF;
+    border: none;
+    color: white;
+}
+.login div{
+    margin-top: 15px;
+    /* width: 89%; */
+    /* display: flex; */
+    flex-direction: row;
+    /* justify-content: space-evenly; */
+    /* flex-wrap: nowrap; */
+    color: white;
+    margin-left: 10px;
+    text-align: -webkit-center;
+}
+    
+
+.login-box{
+    /* width: 600px; */
+    color: white;
+}
+
+.textbox{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px 0;
+    margin: 8px 0;
+    border-bottom: 2px solid #27A2C1;
+
+}
+.textbox input{
+    color: white;
+    outline: none;
+}
+.textbox i{
+    margin-right: 5px;
+    margin-left: 5px;
+}
+input::placeholder {
+    color: white;
+    padding-left: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.con input{
+    width:150px;
+    height: 46px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    margin-top: 15px;
+
+}
+
+
+
+
+
+
+
+
+
+footer{
+    text-align: center;
+    margin-top: 70px;
+    width: 100vw;
+    height: 289px;
+    background-color: #38BCFF;
+
+}
+.footer-content{
+    width: 40%;
+   margin:auto;
+}
+.footer-content p{
+    font-size: 18px;
+    font-weight: medium;
+    color:white;
+}
+.logo-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.logo-footer h2{
+    margin-left: 15px;
+    font-weight: bold;
+}
+.sociales a img{
+    margin: 20px;
+    width: 30px;
+    height: 30px;
+}
+.footer-bottom{
+    color: white;
+    font-weight: bold;
+}
+ul{
+    display: inline-flex;
+}
+
+
+
+
+@media (max-width:700px) {
+    .admin{
+        margin-left:35%;
+        width: 30px;
+        height: 30px;
+        
+    
+    }
+    .logo{
+        width: 65px;
+        height: 65px;
+        margin-top: 0px;
+    }.navbar{
+        height: 65px;
+    }nav h2{
+        font-size: 18px;
+    }.login{
+        width: 90vw;
+        height: 316px;
+        margin-top: 11vh;
+    }.footer-content{
+        width: 90%;
+       margin:auto;
+    }
+    .sous-section{
+        width: 100%;
+    }
+    .sociales a img{
+        margin: 10px;
+        width: 25px;
+        height: 25px;
+    }
+    .footer-bottom{
+        margin-top: 20px;
+    } .admin{
+        margin-left:0%;
+        width: 30px;
+        height: 30px;   
+    }
+    footer{
+        margin-top: 110px;
+    }
+    .textbox {
+       width: 80%;
+    }.con input{
+        height: 40px;
+        font-size: 17px;
+    }.admin{
+       
+        margin-left:35%;
+        
+    
+    }
+}

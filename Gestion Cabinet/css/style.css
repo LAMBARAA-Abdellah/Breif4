@@ -1,0 +1,576 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Roboto', regular;
+    overflow-x: hidden;
+}
+.navbar{
+    position: fixed;
+    width:100% ;
+    height: 80px;
+    z-index: 999;
+    background-color:#38BCFF;
+}
+.logo{
+    width: 76px;
+    height: 76px;
+    margin-left: 10%;
+    margin-top: 2px;
+   
+}
+nav{
+    display: flex;
+}
+nav h2{
+    margin-top: 24px;
+    margin-left: 15px;
+    font-family: "roboto";
+    font-weight: bold;
+}
+nav button{
+    color: white;
+    border: none;
+    
+    width:291px;
+    height: 70px;
+    margin-top:auto;
+    margin-bottom: auto;
+    border-radius: 27px;
+    font-size: 25px;
+    background-color: #27A2C1;
+    cursor: pointer;
+
+}
+a{
+    margin: auto;
+}
+.admin{
+    width: 50px;
+    height: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+    /* margin-left: 80px; */
+    
+
+}
+.cnc{
+    width: 38%;
+    display: flex;
+    justify-content: space-between;
+    margin-left:38%;
+ 
+}
+
+.welcome{
+    padding-top:100px;
+    width: 100%;
+    height: 400px;
+    background:linear-gradient(to top,rgba(0,0,0,0.3)100%,rgba(0,0,0,0.3)100%),url(../img/health-medical-life-insurance-whole-260nw-740206291.jpg);
+    background-size: cover;
+    background-position: center ;
+    /* background-repeat: no-repeat; */
+    /* background-attachment: fixed; */
+    /* border: solid 1px red; */
+}
+.welcome .content{
+    width: 50%;
+    height: 300px; ;
+    margin-left: 7%;
+    margin-top: 4%;
+    text-align: center;
+    color: white;
+}
+.welcome .content h1{
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.welcome .content h2{
+    font-size: 30px;
+    margin-bottom: 5%;
+}
+.welcome .content button{
+    width: 180px;
+    height: 50px;
+    color: white;
+    background-color: #38BCFF;
+    font-size: 20px;
+    margin-top: 7%;
+    border: none;
+    border-radius: 10px;
+    margin:4%;
+    cursor: pointer;
+}
+.speciality{
+    height: 380px;
+}
+.speciality .content h1{
+    margin: 20px 0px 20px 0px;
+    text-align: center;
+    font-size: 40px;
+}
+.speciality .content h1 span{
+    color: #38BCFF;
+}
+
+.main{
+    margin-bottom: 40px;
+    width: 100%;
+    display: flex;
+    /* justify-content: space-evenly; */
+    justify-content: space-around;
+/* justify-content: space-between; */
+    flex-wrap: wrap;
+    
+}
+.div1{
+    
+    width: 300px;;
+    margin-bottom: 30px;
+    /* border: solid 2px black; */
+    background-color: #ffF;
+    display: flex;
+    flex-direction:column;
+    
+}
+.contenant {
+    position: relative;
+    text-align: center;
+    color:white;
+  }
+
+.texte_centrer {
+   
+    background-color: rgba(22, 20, 20, 0.5);
+    /* font-size: 20px; */
+    /* font-weight: bold; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column
+  }
+  .contenant .spec{
+    box-shadow: 0px 5px 18px rgb(0 0 0 / 15%);
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    background-color: rgba(22, 20, 20, 0.5);
+    border-radius: 10px;
+  }
+  .image__overlay{
+      position: absolute;
+      /* top: 0;
+      left: 0; */
+      width: 100%;
+      height: 100%;
+      background: rgba(67, 79, 80, 0.61)100%;
+    border-radius: 10px;
+      color: #ffF;
+      /* font-family:'Quicksand',sans-serif; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity:0 ;
+      transition: opacity 0.5s;
+  }
+  .image__overlay >*{
+      transition: transform 0.5s;
+  }
+  .image__overlay:hover{
+    opacity:1.3 ;
+  }
+  .image__title{
+      font-size: 2em;
+      font-weight: bold;
+  }
+  .image__description{
+      font-weight: 1.25em;
+      margin-top: 0.25em;
+  }
+.team{
+    /* height: 420px; */
+
+
+}
+.team h1{
+    margin: 20px 0px 20px 0px;
+    text-align: center;
+    font-size: 40px;
+}
+.team h1 span{
+    color: #38BCFF;
+}
+.cont{
+
+    display: flex;
+    /* justify-content: space-evenly; */
+    justify-content: space-around;
+/* justify-content: space-between; */
+    flex-wrap: wrap;  
+
+}
+
+
+.div-tem{
+    width: 311px;
+    height: 311px;
+    background-color: #38BCFF;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    
+}
+.div-tem img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    align-items: center;
+}
+.div-tem div{
+    color: white;
+    margin-top: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+.div-tem div h4{
+    margin-top: 10px;
+}
+.galerie{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.galerie .image img{
+    width: 400px;
+    height: 300px;
+    align-items: center;
+    background-size: cover;
+    background-position: center ;
+    object-fit: cover;
+    max-width: 100%;
+    margin:0 0 40px 0;
+} 
+.galeries h1{
+    margin: 20px 0px 20px 0px;
+    text-align: center;
+    font-size: 40px;
+}
+.galeries h1 span{
+    color: #38BCFF;
+}
+.apropos{
+    display: flex;
+    flex-direction: column;
+}
+.trouver{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.text{
+    margin-right: 0;
+    margin-left: 0;
+}
+
+ .text-button button img{
+    width: 25px;
+    height: 25px;
+    filter: invert(89%) sepia(59%) saturate(0%) hue-rotate(346deg) brightness(104%) contrast(103%);
+}
+ .text-button button{
+    display: flex;
+    align-items: center;
+    margin-left: 39%;
+    margin-top: 10px;
+    background-color: #27A2C1;
+    color: white;
+    border: none;
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+.text h1{
+    font-size: 35px;
+    font-weight: bold;
+    margin: 10px;
+}
+.text p{
+    font-size: 25px;
+    margin: 10px;
+ 
+}
+.section{
+    width: 94%;
+    background-color: #38BCFF;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.adr{
+    display: flex;
+    width: 360px;
+    margin: 20px;
+    color: white;
+    align-items: center;
+
+}
+.adr div img{
+    margin-left: 10px;
+    width: 70px;
+    height: 70px;
+    filter: invert(89%) sepia(59%) saturate(0%) hue-rotate(346deg) brightness(104%) contrast(103%);
+}
+.adr div h1{
+  font-size: 40px;
+}
+.adr div p{
+    font-size: 18px;
+
+}
+.info{
+    margin-left: 15px;
+}
+.sous-section{
+    border:solid 0.5px rgb(0 0 0 / 15%);
+    width: 94%;
+    height: 536px;
+    background-color: #FFF;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.form{
+    width:42%;
+    margin: 20px 30px 0 50px;
+    
+}
+.form h1{
+    font-weight: bold;
+    font-size: 30px;
+    margin:0px 0px 20px 20px;
+}
+.maps{
+    width: 48%;
+}
+.maps img{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    background-size: cover;
+    background-position: center ;
+    object-fit: cover;
+    cursor: pointer;
+   
+}
+input{
+    width:100%;
+    height: 49px;
+    margin-bottom: 10px;
+    border-color: rgb(0 0 0 / 15%);
+    background-color: rgb(0 0 0 / 3%);
+    padding-left: 20px;
+}
+textarea{
+    width:100%;
+    height: 165px;
+    margin-bottom: 10px;
+    border-color: rgb(0 0 0 / 15%);
+    padding-left: 20px;
+    padding-top: 10px;
+    font-size: 130%;
+    background-color: rgb(0 0 0 / 3%);
+}
+input::placeholder {
+   
+  }
+
+form button{
+    width: 110px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #38BCFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+footer{
+    text-align: center;
+    margin-top: 70px;
+    width: 100vw;
+    height: 289px;
+    background-color: #38BCFF;
+
+}
+.footer-content{
+    width: 40%;
+   margin:auto;
+}
+.footer-content p{
+    font-size: 18px;
+    font-weight: medium;
+    color:white;
+}
+.logo-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.logo-footer h2{
+    margin-left: 15px;
+    font-weight: bold;
+}
+.sociales a img{
+    margin: 20px;
+    width: 30px;
+    height: 30px;
+}
+.footer-bottom{
+    color: white;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 700px) {
+    nav button{
+        display: none;
+    }.logo{
+        width: 65px;
+        height: 65px;
+        margin-top: 0px;
+    }.navbar{
+        height: 65px;
+    }nav h2{
+        font-size: 18px;
+    
+    }.welcome .content button{
+        width: 139px;
+    }
+    .welcome .content{
+        width: 96%;
+        margin-top: 4%;
+        margin-left: 0%;
+    }
+    .cnc{
+        margin-left:32%;
+    }
+    .welcome .content h1{
+        font-size: 30px;
+    }
+    
+    .welcome .content h2{
+        font-size: 30px;
+    }
+    .speciality{
+        height: 1390px;
+    }
+    .div-tem{
+        margin-bottom: 30px;
+    }
+    .speciality .content h1{
+        font-size: 25px;
+    }
+    .team h1{
+        font-size: 25px;
+    }.galerie .image img{
+        width: 90%;
+        margin:0px  10px  10px 20px;
+    }.galeries h1{
+        font-size: 25px;
+    } .text-button button{
+        margin-left: 25%;
+        width: 180px;
+        height: 40px;
+        font-size: 12px;
+
+    } .text-button button img{
+        width: 17px;
+        height: 17px;
+    }.text h1{
+        font-size: 20px;
+    }.text p{
+        font-size: 15px;
+     
+    }.section{
+        width: 100%;
+    }.adr div h1{
+        font-size: 30px;
+      }
+      .adr div p{
+          font-size: 16px;
+      
+      }.adr div img{
+          width: 40px;
+          height: 40px;
+          margin-left: 30px;
+          
+      }.maps{
+        width: 100%;
+    }.form {
+        margin: 5px;
+        width: 91%;}
+    .sous-section{
+        border: none;
+    }.maps img {
+        width: 100vw;
+        height: 370px;
+    }.apropos{
+        height: 1300px;
+    }
+    .footer-content{
+        width: 90%;
+       margin:auto;
+    }
+    .sous-section{
+        width: 100%;
+    }
+    .sociales a img{
+        margin: 10px;
+        width: 25px;
+        height: 25px;
+    }
+    .footer-bottom{
+        margin-top: 20px;
+    } .admin{
+        margin-left:0%;
+        width: 30px;
+        height: 30px;   
+    }
+    footer{
+        margin-top: 110px;
+    }
+    
+    
+}

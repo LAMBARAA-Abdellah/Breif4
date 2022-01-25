@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION['login'])) {
+    echo "you are logged out";
+    header('location:login.php');
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,12 +24,27 @@
             <img class="logo" src="img/logo.png" alt="Cabinet">
             <H2>CABINET</H2>
             <div class="log">
-                <h1>LambaraaAbdellah</h1>
-                <img class="admin" src="img/icon/2203549_admin_avatar_human_login_user_icon.png" alt="">
+
+
+                <h1> <?php
+                        // session_start();
+                        $_SESSION['login'];
+                        echo $_SESSION['login'];
+                        ?></h1>
+                <a href="deconecter.php">
+                    <img class="admin" src="img/icon/sign-out-alt-solid.svg" alt="">
+                </a>
             </div>
         </nav>
     </section>
+    <?php
 
+    require_once 'sql.php';
+    $sql = new sql();
+    $rep = $sql->countpt()->fetchColumn();
+    $cpt = $sql->countdct()->fetchColumn();
+
+    ?>
     <section class="statistique">
         <div class="st">
             <div>
@@ -28,7 +52,7 @@
             </div>
             <div class="info">
                 <h1>Patients</h1>
-                <h2>123</h2>
+                <h2><?php echo $rep ?></h2>
             </div>
         </div>
         <div class="st">
@@ -38,7 +62,7 @@
             <div class="info">
                 <h1>Doctors
                 </h1>
-                <h2>4</h2>
+                <h2><?php echo $cpt ?></h2>
             </div>
         </div>
         <div class="st">
@@ -66,7 +90,7 @@
 
             </div>
             <div class="add-user">
-                <a href="ajouter.html">
+                <a href="ajouter.php">
                     <button type="submit" class="">
 
                         Ajouter <img src="img/icon/user-plus-solid.svg" alt="">
@@ -79,44 +103,45 @@
         <div class="table">
             <table>
                 <tr>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
+                    <th>#</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>date naissance</th>
+                    <th>telephone</th>
+                    <th>email</th>
+                    <th>maladie</th>
+                    <th>doctor</th>
                     <th colspan="2">Firstname</th>
 
                 </tr>
-                <tr>
-                    <td>Peter</td>
-                    <td>Griffin</td>
-                    <td>Peter</td>
-                    <td>Griffin</td>
-                    <td>Peter</td>
-                    <td>Griffin</td>
-                    <td>Peter</td>
-                    <td>Griffin</td>
-                    <td class="edit"><a href="modifier.html"><img src="img/icon/edit-solid.svg" alt=""></a></td>
-                    <td class="delete"><a href=""><img src="img/icon/trash-alt-solid.svg" alt=""></a></td>
+                <?php
+                $i = 0;
+                // require 'sql.php';
+                $sql = new sql();
+                $rep = $sql->aficherpatient();
+                while ($l = $rep->fetch()) {
+                ?>
 
 
-                </tr>
-                <tr>
-                    <td>Lois</td>
-                    <td>Griffin</td>
-                    <td>Peter</td>
-                    <td>Griffin</td>
-                    <td>Peter</td>
-                    <td>Griffin</td>
-                    <td>Peter</td>
-                    <td>Griffin</td>
-                    <td class="edit"><a href=""><img src="img/icon/edit-solid.svg" alt=""></a></td>
-                    <td class="delete"><a href=""><img src="img/icon/trash-alt-solid.svg" alt=""></a></td>
 
-                </tr>
+
+                    <tr>
+                        <td><?= ++$i; ?></td>
+                        <td><?php echo $l['nom_p']; ?></td>
+                        <td><?php echo $l['prenom_p']; ?></td>
+                        <td><?php echo $l['dateNaissance_p']; ?></td>
+                        <td><?php echo $l['tel']; ?></td>
+                        <td><?php echo $l['email_p']; ?></td>
+                        <td><?php echo $l['maladie']; ?></td>
+                        <td><?php echo $l['nom'], " ", $l['prenom']; ?></td>
+                        <td style="width: 75px;" class="edit"><a href="modifier.php?id_p=<?= $l['id_p']; ?>"><img src="img/icon/edit-solid.svg" alt=""></a></td>
+                        <td style="width: 75px;" class="delete"><a href="delete.php?id_p=<?= $l['id_p']; ?>" data-id=<?= $l['id_p']; ?>><img src="img/icon/trash-alt-solid.svg" alt=""></a></td>
+
+
+                    </tr>
+                <?php
+                }
+                ?>
             </table>
 
         </div>
@@ -124,7 +149,19 @@
 
     </section>
 
-
+    <script>
+        const deleteLinks = document.querySelectorAll(".delete a");
+        deleteLinks.forEach(link => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault()
+                const id = link.getAttribute("data-id")
+                const answer = confirm(`do you really want to remove "${id}"`);
+                if (answer) {
+                    window.location.href = link.href;
+                }
+            })
+        })
+    </script>
 
 
 

@@ -157,6 +157,7 @@ table, th ,tr {
   td{
     width: 150px;
     height: 43px;  
+    text-align: center;
   }
   .edit ,.delete{
     text-align: -webkit-center;

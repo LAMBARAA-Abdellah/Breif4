@@ -17,8 +17,7 @@
             <H2>CABINET</H2>
             <div class="cnc">
                 <button>Appelez: 05227-87696</button>
-                <a href="login.php"><img class="admin" src="img/icon/2203549_admin_avatar_human_login_user_icon.png"
-                        alt=""></a>
+                <a href="login.php"><img class="admin" src="img/icon/2203549_admin_avatar_human_login_user_icon.png" alt=""></a>
             </div>
         </nav>
 
@@ -27,7 +26,8 @@
         <div class="content">
             <h1>Welcome to your CABINET</h1>
             <H2>Your health is in your<br> hands</H2>
-            <button>Contact us</button>
+            <a href="#contact">
+                <button>Contact us</button></a>
             <button>Rendez-vous</button>
         </div>
 
@@ -41,17 +41,16 @@
                     <div class="contenant">
                         <img class="spec" src="img/Illustrations-medical.jpg" alt="voiture">
                         <div class="texte_centrer image__overlay">
-                            <div class="image__title">Dacia</div>
+                            <div class="image__title">Maintenance corrective</div>
                             <p class="image__description">Lorem, ipsum dolor adipisicing elit.</p>
                         </div>
                     </div>
                 </div>
                 <div class="div1">
                     <div class="contenant">
-                        <img class="spec"
-                            src="img/36443216-docteur-faire-test-à-son-patient-dans-un-cabinet-médical.webp" alt="moto">
+                        <img class="spec" src="img/36443216-docteur-faire-test-à-son-patient-dans-un-cabinet-médical.webp" alt="moto">
                         <div class="texte_centrer image__overlay">
-                            <div class="image__title">Moto</div>
+                            <div class="image__title">Maintenance préventive </div>
                             <p class="image__description">Lorem, ipsum dolor adipisicing elit.</p>
                         </div>
                     </div>
@@ -60,7 +59,7 @@
                     <div class="contenant">
                         <img class="spec" src="img/child.jpg" alt="camion">
                         <div class="texte_centrer image__overlay">
-                            <div class="image__title">Camion</div>
+                            <div class="image__title"> Maintenance préventive</div>
                             <p class="image__description">Lorem, ipsum dolor adipisicing elit.</p>
                         </div>
                     </div>
@@ -69,7 +68,7 @@
                     <div class="contenant">
                         <img class="spec" src="img/aller-tests-01.jpg" alt="chantier">
                         <div class="texte_centrer image__overlay">
-                            <div class="image__title">Chantier</div>
+                            <div class="image__title">Maintenance corrective</div>
                             <p class="image__description">Lorem, ipsum dolor adipisicing elit.</p>
                         </div>
                     </div>
@@ -135,7 +134,7 @@
             </div>
         </div>
     </section>
-    <section class="apropos">
+    <section id="contact" class="apropos">
         <div class="trouver">
             <div class="text">
                 <h1>Comment Nous Trouver</h1>

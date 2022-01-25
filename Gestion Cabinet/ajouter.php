@@ -1,3 +1,26 @@
+<?php
+include_once './sql.php';
+if (isset($_POST['ajouter'])) {
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $tel = $_POST['tel'];
+    $email = $_POST['email'];
+    $date = $_POST['date'];
+    $maladie = $_POST['maladie'];
+    $doctor = $_POST['doctor'];
+    $rep = new sql();
+    $exe = $rep->Ajouterpatient($nom, $prenom, $date, $tel, $email, $maladie, $doctor);
+
+    header("location:dashbord.php");
+}
+if (isset($_POST['close'])) {
+    header("location:dashbord.php");
+}
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +48,7 @@
 
         <section class="modifier">
             <h1>Ajouter Patient</h1>
-            <form action="">
+            <form method="POST" action="#">
                 <div class=" all">
                     <div>
                         <label for="nom">Nom :</label>
@@ -33,7 +56,7 @@
                     </div>
                     <div>
                         <label for="name">Prenom :</label>
-                        <input type="text" id="p" name="user_name">
+                        <input type="text" id="p" name="prenom">
                     </div>
                     <div>
                         <label for="tel">Telephone :</label>
@@ -45,7 +68,7 @@
                     </div>
                     <div>
                         <label for="date">Date naissance :</label>
-                        <input type="text" id="date" name="date">
+                        <input type="date" id="date" name="date">
                     </div>
                     <div>
                         <label for="maladie">Maladie :</label>
@@ -53,22 +76,25 @@
                     </div>
                     <div>
                         <label for="doctor">Doctor :</label>
-
-                        <select id="pet-select">
-                            <option value="">--Please choose an option--</option>
-                            <option value="dog">Dog</option>
-                            <option value="cat">Cat</option>
-                            <option value="hamster">Hamster</option>
-                            <option value="parrot">Parrot</option>
-                            <option value="spider">Spider</option>
-                            <option value="goldfish">Goldfish</option>
+                        <?php
+                        include_once 'sql.php';
+                        $sql = new sql();
+                        $result = $sql->aficherdoctor();
+                        $l = $result->fetchAll();
+                        // var_dump($l);
+                        ?>
+                        <select id="pet-select" name="doctor">
+                            <option value="">--Please choose your id</option>
+                            <?php foreach ($l as $val) : ?>
+                                <option value="<?= $val['id']  ?>"><?= $val['nom']   ?></option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
 
                 </div>
                 <div class="button">
-                    <input class="mod" type="button" value="ajouter" onclick="msg()">
-                    <input class="clos" type="button" value="close">
+                    <input class="mod" type="submit" name="ajouter" value="ajouter" onclick="msg()">
+                    <input class="clos" type="submit" name="close" value="close">
 
                 </div>
             </form>

@@ -1,6 +1,26 @@
+<?php
+if (isset($_POST['submit'])) {
+    $login = $_POST['login'];
+    $pass = $_POST['password'];
+    require 'sql.php';
+    $sql = new sql();
+    $rep = $sql->authentifier($login, $pass);
+    if ($rep) {
+        session_start();
+        $_SESSION['login'] = $login;
+        header("location:dashbord.php");
+    } else {
 
+        header("location:login.php?msg=Impossible de se connecter!informations incorrectes");
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
+
+
+
 
 <head>
     <meta charset="UTF-8">
@@ -8,8 +28,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 </head>
 
@@ -24,6 +43,7 @@
         </nav>
 
     </section>
+
     <section class="login">
 
         <div>
@@ -33,14 +53,24 @@
             <div class="login-box">
                 <div class="textbox">
                     <i class="	fa fa-user" aria-hidden="true"></i>
-                    <input type="text" placeholder="Email" name="email" value="">
+                    <input type="email" placeholder="Email" name="login" value="" required>
                 </div>
                 <div class="textbox">
                     <i class="fa fa-lock" aria-hidden="true"></i>
                     <input type="password" placeholder="Password" name="password" value="">
                 </div>
+                <p style="color: red;"><?php
+                                        if (isset($_GET['msg'])) {
+                                            echo $_GET['msg'];
+                                        } else {
+                                            echo "";
+                                        }
+
+                                        ?>
+                </p>
+
                 <div class="con">
-                    <input class="btn" type="submit" name="connexion" value="connexion">
+                    <input class="btn" type="submit" name="submit" value="connexion">
                 </div>
             </div>
         </form>

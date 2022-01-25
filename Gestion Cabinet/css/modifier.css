@@ -92,7 +92,7 @@ input ,select{
     
 }
 
-
+/* 
 input[type=button] {
     width: 100px;
     margin-top: 40px;
@@ -100,18 +100,30 @@ input[type=button] {
     color: white;
     margin: 46px 10px 3px 0;
     cursor: pointer;
-  }
+  } */
 
 
 .button{
     display: flex;
     justify-content: flex-end;
 }
-.mod{
+.button .mod{
     background-color: #4CAF50;
+      width: 100px;
+    margin-top: 40px;
+    border: none;
+    color: white;
+    margin: 46px 10px 3px 0;
+    cursor: pointer;
 }
-.clos{
-    background-color: rgb(209, 79, 79);
+.button .clos{
+    background-color: rgb(209, 79, 79); 
+     width: 100px;
+    margin-top: 40px;
+    border: none;
+    color: white;
+    margin: 46px 10px 3px 0;
+    cursor: pointer;
 }
 
 
